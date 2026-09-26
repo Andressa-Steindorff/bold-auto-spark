@@ -6,17 +6,17 @@ import batteryImg from "@/assets/bateria.jpg";
 // TODO: substituir pelo número real do WhatsApp da loja (formato: 55 + DDD + número)
 const WHATSAPP_NUMBER = "5554999999999";
 
-const BRANDS = [
-  "BOSCH",
-  "MOURA",
-  "NGK",
-  "MONDIAL",
-  "COFAP",
-  "FRAM",
-  "HELLA",
-  "ZTECH",
-  "TECMIDIA",
-  "GEDORE",
+const PARTS = [
+  "BATERIAS",
+  "ÓLEO",
+  "FILTROS DE ÓLEO",
+  "FILTROS DE AR",
+  "VELAS",
+  "CABOS DE VELA",
+  "LÂMPADAS",
+  "FREIOS",
+  "SUSPENSÃO",
+  "ACESSÓRIOS",
 ];
 
 function waLink(message: string) {
@@ -32,13 +32,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp e entrega na hora.",
+          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp.",
       },
       { property: "og:title", content: "Steindorff Auto Peças e Baterias" },
       {
         property: "og:description",
         content:
-          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp e entrega na hora.",
+          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -60,11 +60,9 @@ const IconBattery = () => (
   </svg>
 );
 
-const IconTruck = () => (
+const IconStar = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-    <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" />
-    <circle cx="5.5" cy="18.5" r="2.5" />
-    <circle cx="18.5" cy="18.5" r="2.5" />
+    <path d="M12 2l3 6.5 7 .8-5.2 4.7 1.5 6.9L12 17.3 5.7 20.9l1.5-6.9L2 9.3l7-.8z" />
   </svg>
 );
 
@@ -90,12 +88,12 @@ const SERVICES = [
   {
     icon: <IconBattery />,
     title: "Baterias",
-    text: "As melhores marcas com teste gratuito, instalação no local e garantia de fábrica. A sua parou? A gente resolve.",
+    text: "Na compra da sua bateria, o teste e a instalação são grátis. As melhores marcas, com garantia de fábrica.",
   },
   {
-    icon: <IconTruck />,
-    title: "Entrega rápida",
-    text: "Pedido confirmado, peça a caminho. Entregamos na sua casa, oficina ou no ponto onde o carro parou.",
+    icon: <IconStar />,
+    title: "Acessórios",
+    text: "Lâmpadas, cabos, limpadores e tudo mais pra deixar seu carro completo e rodando com segurança.",
   },
   {
     icon: <IconClock />,
@@ -117,8 +115,8 @@ const STEPS = [
   },
   {
     num: "03",
-    title: "Retira ou recebe",
-    text: "Pega na loja ou recebe onde estiver. Em bateria, instalamos na hora.",
+    title: "Retira na loja",
+    text: "Passa na loja e leva sua peça. Na bateria, teste e instalação grátis, na hora.",
   },
 ];
 
