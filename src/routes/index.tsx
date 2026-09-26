@@ -453,7 +453,7 @@ function Landing() {
               WhatsApp: (00) 00000-0000
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Endereço da loja: atualizar com o endereço real
+              Avenida da Azenha, 605
             </p>
           </div>
           <div>
