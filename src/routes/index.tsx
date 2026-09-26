@@ -247,7 +247,7 @@ function Landing() {
               key={i}
               className="flex items-center gap-12 font-display text-xl uppercase text-primary-foreground"
             >
-              {brand}
+              {part}
               <span className="text-secondary-foreground">★</span>
             </span>
           ))}
@@ -291,14 +291,15 @@ function Landing() {
               Bateria te deixou <span className="text-primary">na mão</span>?
             </h2>
             <p className="mt-6 max-w-md text-lg text-secondary-foreground/90">
-              A gente testa, indica a bateria certa para o seu carro e instala
-              onde você estiver. Sem susto no preço e com garantia de fábrica.
+              A gente indica a bateria certa pro seu carro e, na compra, o teste
+              e a instalação são grátis. Sem susto no preço e com garantia de
+              fábrica.
             </p>
             <ul className="mt-8 space-y-4">
               {[
-                "Teste gratuito do sistema elétrico",
-                "Instalação no local, na hora",
-                "As melhores marcas com garantia",
+                "Na compra da bateria: teste e instalação grátis",
+                "Indicação da bateria certa pro seu carro",
+                "As melhores marcas com garantia de fábrica",
                 "Retirada e destino correto da bateria velha",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 font-semibold">
@@ -325,7 +326,7 @@ function Landing() {
               className="aspect-[4/3] w-full rounded-2xl border-2 border-primary-foreground/20 object-cover"
             />
             <div className="absolute -bottom-5 right-6 rounded-md bg-primary px-5 py-3 font-display text-lg uppercase text-primary-foreground shadow-lg">
-              Instalação na hora
+              Teste e instalação grátis
             </div>
           </div>
         </div>
@@ -458,7 +459,7 @@ function Landing() {
               Atendimento
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
-              Segunda a sábado, das 8h às 18h — confirmar horários reais
+              Segunda a sexta, das 8h às 18h • Sábado, das 8h às 17h
             </p>
           </div>
         </div>
