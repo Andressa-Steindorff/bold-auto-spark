@@ -6,17 +6,17 @@ import batteryImg from "@/assets/bateria.jpg";
 // TODO: substituir pelo número real do WhatsApp da loja (formato: 55 + DDD + número)
 const WHATSAPP_NUMBER = "5554999999999";
 
-const BRANDS = [
-  "BOSCH",
-  "MOURA",
-  "NGK",
-  "MONDIAL",
-  "COFAP",
-  "FRAM",
-  "HELLA",
-  "ZTECH",
-  "TECMIDIA",
-  "GEDORE",
+const PARTS = [
+  "BATERIAS",
+  "ÓLEO",
+  "FILTROS DE ÓLEO",
+  "FILTROS DE AR",
+  "VELAS",
+  "CABOS DE VELA",
+  "LÂMPADAS",
+  "FREIOS",
+  "SUSPENSÃO",
+  "ACESSÓRIOS",
 ];
 
 function waLink(message: string) {
@@ -32,13 +32,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp e entrega na hora.",
+          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp.",
       },
       { property: "og:title", content: "Steindorff Auto Peças e Baterias" },
       {
         property: "og:description",
         content:
-          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp e entrega na hora.",
+          "Auto peças e baterias com atendimento rápido. Orçamento em minutos pelo WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -60,11 +60,9 @@ const IconBattery = () => (
   </svg>
 );
 
-const IconTruck = () => (
+const IconStar = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-    <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" />
-    <circle cx="5.5" cy="18.5" r="2.5" />
-    <circle cx="18.5" cy="18.5" r="2.5" />
+    <path d="M12 2l3 6.5 7 .8-5.2 4.7 1.5 6.9L12 17.3 5.7 20.9l1.5-6.9L2 9.3l7-.8z" />
   </svg>
 );
 
@@ -90,12 +88,12 @@ const SERVICES = [
   {
     icon: <IconBattery />,
     title: "Baterias",
-    text: "As melhores marcas com teste gratuito, instalação no local e garantia de fábrica. A sua parou? A gente resolve.",
+    text: "Na compra da sua bateria, o teste e a instalação são grátis. As melhores marcas, com garantia de fábrica.",
   },
   {
-    icon: <IconTruck />,
-    title: "Entrega rápida",
-    text: "Pedido confirmado, peça a caminho. Entregamos na sua casa, oficina ou no ponto onde o carro parou.",
+    icon: <IconStar />,
+    title: "Acessórios",
+    text: "Lâmpadas, cabos, limpadores e tudo mais pra deixar seu carro completo e rodando com segurança.",
   },
   {
     icon: <IconClock />,
@@ -117,8 +115,8 @@ const STEPS = [
   },
   {
     num: "03",
-    title: "Retira ou recebe",
-    text: "Pega na loja ou recebe onde estiver. Em bateria, instalamos na hora.",
+    title: "Retira na loja",
+    text: "Passa na loja e leva sua peça. Na bateria, teste e instalação grátis, na hora.",
   },
 ];
 
@@ -148,11 +146,11 @@ function Landing() {
       {/* Barra superior */}
       <div className="bg-primary">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-1 px-4 py-2 text-center text-xs font-bold uppercase tracking-widest text-primary-foreground">
-          <span>Baterias com instalação no local</span>
+          <span>Teste e instalação de bateria grátis</span>
           <span className="hidden sm:inline">•</span>
-          <span>Entrega rápida na região</span>
+          <span>Orçamento em minutos pelo WhatsApp</span>
           <span className="hidden sm:inline">•</span>
-          <span>Orçamento em minutos</span>
+          <span>Peças com nota e garantia</span>
         </div>
       </div>
 
@@ -169,10 +167,12 @@ function Landing() {
             <a href="#orcamento" className="transition hover:text-primary">Orçamento</a>
           </nav>
           <a
-            href="#orcamento"
+            href={waLink("Olá! Quero um orçamento de peça ou bateria.")}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground transition hover:brightness-110"
           >
-            Pedir orçamento
+            Chamar no WhatsApp
           </a>
         </div>
       </header>
@@ -184,10 +184,10 @@ function Landing() {
         <div className="relative mx-auto grid max-w-6xl gap-14 px-4 py-20 md:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <span className="anim-fade-up kicker">
-              Auto peças • Baterias • Entrega rápida
+              Auto peças • Baterias • Teste e instalação grátis
             </span>
             <h1 className="anim-fade-up anim-delay-1 mt-5 font-display text-6xl uppercase leading-[0.95] md:text-8xl">
-              A peça certa <span className="text-primary">chega hoje</span>.
+              A peça certa <span className="text-primary">pro seu carro</span>.
             </h1>
             <p className="anim-fade-up anim-delay-2 mt-6 max-w-md text-lg text-muted-foreground">
               Steindorff Auto Peças e Baterias: você manda o modelo do seu carro
@@ -195,11 +195,8 @@ function Landing() {
               entende do assunto do outro lado da conversa.
             </p>
             <div className="anim-fade-up anim-delay-3 mt-9 flex flex-wrap gap-4">
-              <a className="btn-cta" href="#orcamento">
-                Pedir orçamento
-              </a>
               <a
-                className="btn-outline"
+                className="btn-cta"
                 href={waLink("Olá! Quero um orçamento de peça ou bateria.")}
                 target="_blank"
                 rel="noreferrer"
@@ -221,9 +218,9 @@ function Landing() {
                 </dd>
               </div>
               <div>
-                <dt className="font-display text-3xl text-primary">Hoje</dt>
+                <dt className="font-display text-3xl text-primary">Grátis</dt>
                 <dd className="mt-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                  Sua peça chega
+                  Teste e instalação de bateria
                 </dd>
               </div>
             </dl>
@@ -236,7 +233,7 @@ function Landing() {
               className="relative aspect-[4/5] w-full rounded-2xl border-2 border-border object-cover"
             />
             <div className="absolute -bottom-5 -left-5 rounded-md bg-primary px-5 py-3 font-display text-lg uppercase text-primary-foreground shadow-lg">
-              Baterias com instalação
+              Teste e instalação de bateria grátis
             </div>
           </div>
         </div>
@@ -245,12 +242,12 @@ function Landing() {
       {/* Marca de marcas */}
       <div className="overflow-hidden border-y-2 border-border bg-primary py-3">
         <div className="flex w-max animate-marquee gap-12">
-          {[...BRANDS, ...BRANDS].map((brand, i) => (
+          {[...PARTS, ...PARTS].map((part, i) => (
             <span
               key={i}
               className="flex items-center gap-12 font-display text-xl uppercase text-primary-foreground"
             >
-              {brand}
+              {part}
               <span className="text-secondary-foreground">★</span>
             </span>
           ))}
@@ -294,14 +291,15 @@ function Landing() {
               Bateria te deixou <span className="text-primary">na mão</span>?
             </h2>
             <p className="mt-6 max-w-md text-lg text-secondary-foreground/90">
-              A gente testa, indica a bateria certa para o seu carro e instala
-              onde você estiver. Sem susto no preço e com garantia de fábrica.
+              A gente indica a bateria certa pro seu carro e, na compra, o teste
+              e a instalação são grátis. Sem susto no preço e com garantia de
+              fábrica.
             </p>
             <ul className="mt-8 space-y-4">
               {[
-                "Teste gratuito do sistema elétrico",
-                "Instalação no local, na hora",
-                "As melhores marcas com garantia",
+                "Na compra da bateria: teste e instalação grátis",
+                "Indicação da bateria certa pro seu carro",
+                "As melhores marcas com garantia de fábrica",
                 "Retirada e destino correto da bateria velha",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 font-semibold">
@@ -328,7 +326,7 @@ function Landing() {
               className="aspect-[4/3] w-full rounded-2xl border-2 border-primary-foreground/20 object-cover"
             />
             <div className="absolute -bottom-5 right-6 rounded-md bg-primary px-5 py-3 font-display text-lg uppercase text-primary-foreground shadow-lg">
-              Instalação na hora
+              Teste e instalação grátis
             </div>
           </div>
         </div>
@@ -461,7 +459,7 @@ function Landing() {
               Atendimento
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
-              Segunda a sábado, das 8h às 18h — confirmar horários reais
+              Segunda a sexta, das 8h às 18h • Sábado, das 8h às 17h
             </p>
           </div>
         </div>
