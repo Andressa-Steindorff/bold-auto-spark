@@ -184,7 +184,7 @@ function Landing() {
         <div className="relative mx-auto grid max-w-6xl gap-14 px-4 py-20 md:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <span className="anim-fade-up kicker">
-              Auto peças • Baterias • Entrega rápida
+              Auto peças • Baterias • Teste e instalação grátis
             </span>
             <h1 className="anim-fade-up anim-delay-1 mt-5 font-display text-6xl uppercase leading-[0.95] md:text-8xl">
               A peça certa <span className="text-primary">pro seu carro</span>.
