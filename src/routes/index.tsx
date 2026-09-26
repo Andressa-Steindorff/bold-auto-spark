@@ -146,11 +146,11 @@ function Landing() {
       {/* Barra superior */}
       <div className="bg-primary">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-1 px-4 py-2 text-center text-xs font-bold uppercase tracking-widest text-primary-foreground">
-          <span>Baterias com instalação no local</span>
+          <span>Teste e instalação de bateria grátis</span>
           <span className="hidden sm:inline">•</span>
-          <span>Entrega rápida na região</span>
+          <span>Orçamento em minutos pelo WhatsApp</span>
           <span className="hidden sm:inline">•</span>
-          <span>Orçamento em minutos</span>
+          <span>Peças com nota e garantia</span>
         </div>
       </div>
 
@@ -167,10 +167,12 @@ function Landing() {
             <a href="#orcamento" className="transition hover:text-primary">Orçamento</a>
           </nav>
           <a
-            href="#orcamento"
+            href={waLink("Olá! Quero um orçamento de peça ou bateria.")}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground transition hover:brightness-110"
           >
-            Pedir orçamento
+            Chamar no WhatsApp
           </a>
         </div>
       </header>
@@ -185,7 +187,7 @@ function Landing() {
               Auto peças • Baterias • Entrega rápida
             </span>
             <h1 className="anim-fade-up anim-delay-1 mt-5 font-display text-6xl uppercase leading-[0.95] md:text-8xl">
-              A peça certa <span className="text-primary">chega hoje</span>.
+              A peça certa <span className="text-primary">pro seu carro</span>.
             </h1>
             <p className="anim-fade-up anim-delay-2 mt-6 max-w-md text-lg text-muted-foreground">
               Steindorff Auto Peças e Baterias: você manda o modelo do seu carro
@@ -193,11 +195,8 @@ function Landing() {
               entende do assunto do outro lado da conversa.
             </p>
             <div className="anim-fade-up anim-delay-3 mt-9 flex flex-wrap gap-4">
-              <a className="btn-cta" href="#orcamento">
-                Pedir orçamento
-              </a>
               <a
-                className="btn-outline"
+                className="btn-cta"
                 href={waLink("Olá! Quero um orçamento de peça ou bateria.")}
                 target="_blank"
                 rel="noreferrer"
@@ -219,9 +218,9 @@ function Landing() {
                 </dd>
               </div>
               <div>
-                <dt className="font-display text-3xl text-primary">Hoje</dt>
+                <dt className="font-display text-3xl text-primary">Grátis</dt>
                 <dd className="mt-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                  Sua peça chega
+                  Teste e instalação de bateria
                 </dd>
               </div>
             </dl>
@@ -234,7 +233,7 @@ function Landing() {
               className="relative aspect-[4/5] w-full rounded-2xl border-2 border-border object-cover"
             />
             <div className="absolute -bottom-5 -left-5 rounded-md bg-primary px-5 py-3 font-display text-lg uppercase text-primary-foreground shadow-lg">
-              Baterias com instalação
+              Teste e instalação de bateria grátis
             </div>
           </div>
         </div>
@@ -243,7 +242,7 @@ function Landing() {
       {/* Marca de marcas */}
       <div className="overflow-hidden border-y-2 border-border bg-primary py-3">
         <div className="flex w-max animate-marquee gap-12">
-          {[...BRANDS, ...BRANDS].map((brand, i) => (
+          {[...PARTS, ...PARTS].map((part, i) => (
             <span
               key={i}
               className="flex items-center gap-12 font-display text-xl uppercase text-primary-foreground"
